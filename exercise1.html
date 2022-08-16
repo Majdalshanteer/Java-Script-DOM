@@ -23,17 +23,17 @@
 
 
 
-<div id="mydiv" onmouseover="showMore()" onmouseout='showLess()'>Hello world</div>
+<div id="mydiv" onmouseover=showMore()  onmouseout=showLess()>Hello world</div>
 
 
 
     <script>
         function showMore(){
-            document.getElementById("mydiv").innerHTML = "Can I help you?";
+            document.getElementById("mydiv").textContent = "Can I help you?";
         }
         
         function showLess(){
-            document.getElementById("mydiv").innerHTML = "Hello world";
+            document.getElementById("mydiv").textContent = "Hello world";
         }
         </script>
 
