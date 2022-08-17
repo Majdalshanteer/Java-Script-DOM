@@ -42,7 +42,7 @@
 
 <article>
     <h2>What is lorem ipsum?</h2>
-    <div id="p1_show" class="showlink"><a href="#">Show</a></div>
+    <div id="p1_show" onclick="showOne()"  class="showlink"><a href="#">Show</a></div>
     <div id="p1_text"  class="text">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -51,14 +51,14 @@
             Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
             Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-        <p><a href="#">Hide</a></p>
+        <p><a href="#" id="hideOne" onclick="hideOne()">Hide</a></p>
 
     </div>
 </article>
 
 <article>
     <h2>Why do we use it?</h2>
-    <div id="p2_show" class="showlink"><a href="#">Show</a></div>
+    <div id="p2_show" class="showlink" onclick="showTwo()"><a href="#">Show</a></div>
     <div id="p2_text" class="text">
         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
             at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
@@ -67,14 +67,14 @@
             'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the
             years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
-        <p><a href="#">Hide</a></p>
+        <p><a href="#" id="hideTwo" onclick="hideTwo()">Hide</a></p>
 
     </div>
 </article>
 
 <article>
     <h2>Where does it come from?</h2>
-    <div id="p3_show" class="showlink"><a href="#">Show</a></div>
+    <div id="p3_show" class="showlink" onclick="showThree()"><a href="#">Show</a></div>
     <div id="p3_text" class="text">
         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
             literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
@@ -88,62 +88,53 @@
             1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
             original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
 
-        <p><a href="#">Hide</a></p>
+        <p><a href="#" id="hideThree" onclick="hideThree()">Hide</a></p>
 
     </div>
 </article>
+
+
 
     <script>
         /* TODO this is for you to complete */
         const p1Text = document.getElementById("p1_text");
         const p1Show = document.getElementById("p1_show");
+        const hide1=document.getElementById("HideOne")
       
         const p2Text = document.getElementById("p2_text");
         const p2Show = document.getElementById("p2_show");
+        const hide2=document.getElementById("hideTwo")
         const p3Text = document.getElementById("p3_text");
         const p3Show = document.getElementById("p3_show");
+        const hide3=document.getElementById("hideThree")
 
 
+function showOne(){
+    p1Text.style.display='block';
    
-
-p1_show.addEventListener('click', function handleClick() {
-  if (p1_text.style.display === 'none') {
-    p1_text.style.display = 'block';
-
-    p1_show.textContent = 'Hide ';
-  } else {
+}
+function hideOne(){
     p1_text.style.display = 'none';
 
-    p1_show.textContent = 'Show ';
-  }
-});
+}
 
+function showTwo(){
+   
+    p2Text.style.display='block';
 
-p2Show.addEventListener('click', function handleClick() {
-  if (p2Text.style.display === 'none') {
-    p2Text.style.display = 'block';
+}
+function hideTwo(){
 
-    p2Show.textContent = 'Hide ';
-  } else {
-    p2Text.style.display = 'none';
+    p2_text.style.display = 'none';
+ 
+}
+function showThree(){
+    p3Text.style.display='block';
+}
+function hideThree(){
+    p3_text.style.display = 'none';
+}
 
-    p2Show.textContent = 'Show ';
-  }
-});
-
-
-p3Show.addEventListener('click', function handleClick() {
-  if (p3Text.style.display === 'none') {
-    p3Text.style.display = 'block';
-
-    p3Show.textContent = 'Hide ';
-  } else {
-    p3Text.style.display = 'none';
-
-    p3Show.textContent = 'Show ';
-  }
-
-});
 
 
     </script>

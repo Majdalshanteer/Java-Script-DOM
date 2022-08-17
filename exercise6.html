@@ -39,9 +39,10 @@
   <body>
     <p>this is your playlist, when enter the song and hit add song a list should be created withe delete button as image below</p>
     <img src="images/Screenshot_3.jpg" style="width: 90%;">
-    <form id="form" onsubmit="onClickBtn(event)">
+    <form id="form" >
         <input type="text" id="songTextInput" size="40" placeholder="Song name" required>
-        <button id="addButton" >Add Song</button>
+        <button id="addButton" onclick="onClickBtn(event)">Add Song</button>
+       
     </form>
     
         <ul id="playlist">
@@ -60,14 +61,22 @@
            
             const text = input.value;
     
-            const li = document.createElement('li');
-            li.appendChild(document.createTextNode(text));
+            const li = document.createElement('li'); 
+
+            list.appendChild(li);
+
+            const songName=document.createTextNode(text)
+
+            li.appendChild(songName);
         
-            
             const button = document.createElement("button");
+            li.appendChild(button);
+            
             button.style.position = "absolute"
             button.style.right = "30px"
-            button.innerHTML = "Delete";
+
+            button.textContent = "Delete";
+
             button.style.color="red"
             button.style.background="white"
         
@@ -76,10 +85,8 @@
                 li.remove();
                
             }
-            
-            li.appendChild(button);
+            // to empty songTextInput after every click
            
-            list.appendChild(li);
             input.value = '';
         } 
         </script>

@@ -49,25 +49,28 @@
         var pass2 = document.getElementById('password2');
         var text = document.getElementById('pw1_check');
         var text2 = document.getElementById('pw2_check');
+        var submitBtn=document.getElementById("submitBtn")
 
         if (pass1.value.length >= 6) {
-            document.getElementById("submitBtn").style.display = "block";
+            submitBtn.style.display = "none";
             text.innerHTML = ""
+           
+            
         }
         else {
 
-            document.getElementById("submitBtn").style.display = "none";
+            submitBtn.style.display = "none";
             text.innerHTML = " Too short!"
             return;
         }
 
         if (pass1.value === pass2.value) {
-            document.getElementById("submitBtn").style.display = "block";
-            text2.innerHTML = "";
+            submitBtn.style.display = "block";
+            text2.innerHTML = "match";
 
         }
         else {
-            document.getElementById("submitBtn").style.display = "none";
+            submitBtn.style.display = "none";
             text2.innerHTML = "These passwords don't match"
         }
     }
