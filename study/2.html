@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box{
+            width: 20%;
+            height: 200px;
+            border: 1px black solid;
+            background-color:grey;
+        }
+    </style>
+</head>
+<body>
+  <div id="box">
+
+  </div>  
+  <script>
+  
+    const x =document.getElementById("box");
+
+    x.addEventListener('click',function y(){
+     
+     
+         if (x.style.backgroundColor=='grey'){
+            x.style.backgroundColor='red'
+         }else {
+            x.style.backgroundColor='grey'}
+  
+    })
+
+
+
+
+
+
+  </script>
+</body>
+</html>

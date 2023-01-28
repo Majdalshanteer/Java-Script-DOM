@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 1px solid black;
+            width: 20%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onmouseover="handleMouseOver()" >Apple, Pear, Banana</div>
+
+    <script>
+const x = document.getElementById('box');
+
+// 👇️ Change text color on mouseover
+ function handleMouseOver() {
+  x.style.color = 'red';
+};
+
+// 👇️ Change text color back on mouseout
+x.addEventListener('mouseout', function handleMouseOut() {
+  x.style.color = 'black';
+});
+    </script>
+</body>
+</html>

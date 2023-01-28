@@ -41,7 +41,7 @@
     <img src="images/Screenshot_3.jpg" style="width: 90%;">
     <form id="form" >
         <input type="text" id="songTextInput" size="40" placeholder="Song name" required>
-        <button id="addButton" onclick="onClickBtn(event)">Add Song</button>
+        <button id="addButton" onclick="addSongToList(event)" >Add Song </button>
        
     </form>
     
@@ -50,47 +50,48 @@
 
 
         <script>
-          btn = document.getElementById('addButton');
-         input = document.getElementById('songTextInput');
-         list = document.getElementById('playlist');
-        
+            const list=document.getElementById("playlist")
+            const addNew=document.getElementById("addButton")
+            const textInput=document.getElementById("songTextInput")
+         
 
+            function addSongToList(event){
+                event.preventDefault();
+                
+                text= textInput.value;
+                const element=document.createElement('li');  
 
+                const songName=document.createTextNode(text);
+                const btn = document.createElement('button');
 
+                list.appendChild(element)
+                element.appendChild(songName)
+                element.appendChild(btn)
 
-        function onClickBtn(event) {
+                btn.textContent='Delete'
+                btn.style.position='absolute' 
+                btn.style.right='10px'
+                btn.style.backgroundColor='white'
+                btn.style.color='red'
 
-            // to prevent message about required field
-            event.preventDefault();
-        
-
-            const text = input.value;
-            const li = document.createElement('li'); 
-            const songName=document.createTextNode(text)
-            const button = document.createElement("button");
-
-            list.appendChild(li);
-            li.appendChild(songName);
-            li.appendChild(button);
-            
-            button.style.position = "absolute"
-            button.style.right = "30px"
-
-            button.textContent = "Delete";
-
-            button.style.color="red"
-            button.style.background="white"
-        
-            
-            button.onclick = function() {
-                li.remove();
+                 btn.onclick = function() {
+                 element.remove();
                
             }
-            // to empty songTextInput after every click
+//                 btn.addEventListener('click', function handleMouseOut() {
+//                     element.remove();
+// });
+
+                textInput.value = "";
+
+                }
+
+            
            
-            input.value = '';
-        } 
+
+           
+
+
+            
         </script>
 
-        </body>
-</html>
